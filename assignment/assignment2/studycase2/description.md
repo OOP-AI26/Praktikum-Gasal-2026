@@ -1,5 +1,7 @@
 # Assignment 2: Class Method, Static Method, dan Decorator
 
+
+<a href="https://colab.research.google.com/drive/1F8IYRt5GoCE17mh8oI6jvEcphj16fqv8?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 **Tingkat:** Easy
 
 Pada Live Practicum 2, kamu akan melengkapi satu class yang memakai beberapa jenis method dan decorator sederhana. Setiap kelas mendapatkan study case yang berbeda, tetapi semua case menguji ide yang sama.

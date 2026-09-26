@@ -253,6 +253,27 @@ textarea:focus-visible {
   color: var(--oop-ink);
 }
 
+.announcement-grid {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, max-content) minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.announcement-grid__label,
+.announcement-grid__text {
+  min-width: 0;
+}
+
+.announcement-grid__label {
+  padding-top: 0.1rem;
+}
+
+.announcement-grid__text {
+  overflow-wrap: anywhere;
+}
+
 .main-content h1,
 .main-content h2,
 .main-content h3,

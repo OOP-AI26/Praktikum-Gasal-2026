@@ -5,7 +5,12 @@ nav_order: 1
 has_toc: false
 ---
 
-#### ANNOUNCEMENT/REMINDER:
+<style>
+  .course-detail dt::after {
+    content: none !important;
+  }
+</style>
+
 {% include announcement.md %}
 
 # Pemrograman Berorientasi Objek
@@ -15,9 +20,18 @@ Praktikum Pemrograman Berorientasi Objek Gasal 2026 - S1 Kecerdasan Artifisial, 
 
 ## Detail Mata Kuliah
 
-- Term: Semester Gasal 2026
-- Instructor: Riskyana Dewi Instan Puspitasari, M. Kom.
-- Practicum focus: Object-oriented programming using Python
+
+
+<dl class="course-detail" style="display: grid; grid-template-columns: max-content 1fr; column-gap: 1.5rem;">
+  <dt style="margin: 0; text-align: left;">Term</dt>
+  <dd style="margin: 0;">: Semester Gasal 2026</dd>
+
+  <dt style="margin: 0; text-align: left;">Instructor</dt>
+  <dd style="margin: 0;">: Riskyana Dewi Instan Puspitasari, M. Kom.</dd>
+
+  <dt style="margin: 0; text-align: left;">Practicum focus</dt>
+  <dd style="margin: 0;">: Object-oriented programming using Python</dd>
+</dl>
 
 ## Jadwal Praktikum
 

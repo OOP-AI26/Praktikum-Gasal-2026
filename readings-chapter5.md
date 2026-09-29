@@ -114,9 +114,9 @@ Helm Vario dipasang
 Class `Mobil` dan `Motor` tidak menuliskan `__init__()` maupun `nyalakan()`, tetapi keduanya tetap memilikinya. Keduanya mewarisi `__init__()` dan `nyalakan()` dari class `Kendaraan`.
 
 {% capture m5_inheritance_dasar %}class Kendaraan:
-def **init**(self, merk, tahun):
-self.merk = merk
-self.tahun = tahun
+    def __init__(self, merk, tahun):
+        self.merk = merk
+        self.tahun = tahun
 
     def nyalakan(self):
         print(f"{self.merk} menyala")
@@ -188,15 +188,15 @@ False
 Object `mobil` dikenali sebagai `Mobil` sekaligus sebagai `Kendaraan`. Sebaliknya, `Kendaraan` bukan turunan dari `Mobil`, sehingga hasil pemeriksaan terakhir adalah `False`.
 
 {% capture m5_is_a %}class User:
-def **init**(self, nama, email):
-self.nama = nama
-self.email = email
+    def __init__(self, nama, email):
+        self.nama = nama
+        self.email = email
 
 class Dosen(User):
-pass
+    pass
 
 class Mahasiswa(User):
-pass
+    pass
 
 # Program utama
 
@@ -263,11 +263,11 @@ rina01 berhasil logout
 Class `Tendik` hanya menuliskan bagian yang khusus. Empat attribute dan dua method lainnya diperoleh dari class `User`.
 
 {% capture m5_user_tendik %}class User:
-def **init**(self, nama, email, username, password):
-self.nama = nama
-self.email = email
-self.username = username
-self.password = password
+    def __init__(self, nama, email, username, password):
+        self.nama = nama
+        self.email = email
+        self.username = username
+        self.password = password
 
     def login(self):
         # TODO: cetak "<username> berhasil login"
@@ -383,23 +383,23 @@ Baris `super().__init__(merk, tahun)` menjalankan `__init__()` milik `Kendaraan`
 Perhatikan bahwa `self` tidak dituliskan sebagai argument pada `super().__init__(...)`. Python mengisinya secara otomatis.
 
 {% capture m5_super_constructor %}class Kendaraan:
-def **init**(self, merk, tahun):
-self.merk = merk
-self.tahun = tahun
+    def __init__(self, merk, tahun):
+        self.merk = merk
+        self.tahun = tahun
 
     def nyalakan(self):
         print(f"{self.merk} menyala")
 
 class Mobil(Kendaraan):
-def **init**(self, merk, tahun, jumlah_pintu): # TODO: panggil constructor parent untuk mengisi merk dan tahun # TODO: isi attribute jumlah_pintu
-pass
+    def __init__(self, merk, tahun, jumlah_pintu): # TODO: panggil constructor parent untuk mengisi merk dan tahun # TODO: isi attribute jumlah_pintu
+        pass
 
     def buka_bagasi(self):
         print(f"Bagasi {self.merk} dibuka")
 
 class Motor(Kendaraan):
-def **init**(self, merk, tahun, tipe_stang): # TODO: panggil constructor parent untuk mengisi merk dan tahun # TODO: isi attribute tipe_stang
-pass
+    def __init__(self, merk, tahun, tipe_stang): # TODO: panggil constructor parent untuk mengisi merk dan tahun # TODO: isi attribute tipe_stang
+        pass
 
     def pasang_helm(self):
         print(f"Helm {self.merk} dipasang")
@@ -458,20 +458,20 @@ Polygon sedang dikayuh
 Dengan demikian, `super().__init__()` diperlukan ketika child class memiliki `__init__()` sendiri. Jika child class tidak memiliki `__init__()`, constructor parent digunakan apa adanya.
 
 {% capture m5_tanpa_init %}class User:
-def **init**(self, nama, email):
-self.nama = nama
-self.email = email
+    def __init__(self, nama, email):
+        self.nama = nama
+        self.email = email
 
     def login(self):
         print(f"{self.nama} berhasil login")
 
-# TODO: buat class Tendik yang mewarisi User tanpa menuliskan **init**()
+# TODO: buat class Tendik yang mewarisi User tanpa menuliskan __init__()
 
 # TODO: tambahkan method input_data_dosen() yang mencetak "<nama> menginput data dosen"
 
 class Dosen(User):
-def **init**(self, nama, email, nip): # TODO: panggil constructor parent, lalu isi attribute nip
-pass
+    def __init__(self, nama, email, nip): # TODO: panggil constructor parent, lalu isi attribute nip
+        pass
 
 # Program utama
 
@@ -534,8 +534,8 @@ Selamat datang, Dosen Obie!
 Ketika `dosen.login()` dipanggil, Python mencari `login()` di class `Dosen` terlebih dahulu. Karena ditemukan, method milik `User` tidak dijalankan.
 
 {% capture m5_override_dasar %}class User:
-def **init**(self, nama):
-self.nama = nama
+    def __init__(self, nama):
+        self.nama = nama
 
     def login(self):
         print(f"{self.nama} berhasil login")
@@ -544,10 +544,10 @@ self.nama = nama
         print(f"{self.nama} berhasil logout")
 
 class Dosen(User): # TODO: override login() agar mencetak "Selamat datang, Dosen <nama>!"
-pass
+    pass
 
 class Mahasiswa(User): # TODO: override login() agar mencetak "Selamat datang, Mahasiswa <nama>!"
-pass
+    pass
 
 # Program utama
 
@@ -610,20 +610,20 @@ Silakan gunakan helm Anda
 Baris `super().nyalakan()` menjalankan `nyalakan()` milik `Kendaraan`. Setelah baris tersebut selesai, child class melanjutkan dengan pesan tambahannya.
 
 {% capture m5_override_super %}class Kendaraan:
-def **init**(self, merk, tahun):
-self.merk = merk
-self.tahun = tahun
+    def __init__(self, merk, tahun):
+        self.merk = merk
+        self.tahun = tahun
 
     def nyalakan(self):
         print(f"{self.merk} menyala")
 
 class Mobil(Kendaraan):
-def nyalakan(self): # TODO: jalankan nyalakan() milik parent melalui super() # TODO: cetak "Silakan pasang seatbelt Anda"
-pass
+    def nyalakan(self): # TODO: jalankan nyalakan() milik parent melalui super() # TODO: cetak "Silakan pasang seatbelt Anda"
+        pass
 
 class Motor(Kendaraan):
-def nyalakan(self): # TODO: jalankan nyalakan() milik parent melalui super() # TODO: cetak "Silakan gunakan helm Anda"
-pass
+    def nyalakan(self): # TODO: jalankan nyalakan() milik parent melalui super() # TODO: cetak "Silakan gunakan helm Anda"
+        pass
 
 # Program utama
 
@@ -665,8 +665,8 @@ class Mahasiswa(User):
 Method `login()` menggunakan override tambahan, sedangkan `logout()` menggunakan override penuh.
 
 {% capture m5_override_dua_bentuk %}class User:
-def **init**(self, nama):
-self.nama = nama
+    def __init__(self, nama):
+        self.nama = nama
 
     def login(self):
         print(f"{self.nama} berhasil login")
@@ -675,8 +675,8 @@ self.nama = nama
         print(f"{self.nama} berhasil logout")
 
 class Mahasiswa(User):
-def login(self): # TODO: jalankan login() milik parent, lalu cetak # "Selamat datang, Mahasiswa <nama>!"
-pass
+    def login(self): # TODO: jalankan login() milik parent, lalu cetak # "Selamat datang, Mahasiswa <nama>!"
+        pass
 
     def logout(self):
         # TODO: ganti seluruh perilaku parent, cukup cetak "Sampai jumpa"
@@ -717,25 +717,25 @@ class Dosen(User):
 Jika parameter `perangkat` dihilangkan pada child class, pemanggilan `dosen.login("mobile")` akan menghasilkan `TypeError`. Kode yang sebelumnya berjalan pada parent class menjadi gagal ketika object child class digunakan.
 
 {% capture m5_override_parameter %}class User:
-def **init**(self, nama):
-self.nama = nama
+    def __init__(self, nama):
+        self.nama = nama
 
     def login(self, perangkat="web"):
         print(f"{self.nama} login melalui {perangkat}")
 
 class DosenSalah(User): # Method ini sengaja dibuat tidak kompatibel, biarkan apa adanya
-def login(self):
-print("Halaman dosen dibuka")
+    def login(self):
+        print("Halaman dosen dibuka")
 
 class DosenBenar(User): # TODO: override login() dengan parameter yang kompatibel, yaitu perangkat="web" # TODO: jalankan login() milik parent, lalu cetak "Halaman dosen dibuka"
-pass
+    pass
 
 # Program utama
 
 try:
-DosenSalah("Obie").login("mobile")
+    DosenSalah("Obie").login("mobile")
 except TypeError as error:
-print("TypeError:", error)
+    print("TypeError:", error)
 
 DosenBenar("Obie").login()
 DosenBenar("Obie").login("mobile")
@@ -780,8 +780,8 @@ Ketentuan yang harus dipenuhi adalah sebagai berikut:
 7. Dibuat minimal satu object `Dosen` dan satu object `Mahasiswa`, lalu seluruh method diuji.
 
 {% capture m5_letscode_user %}class User:
-def **init**(self, nama, email): # TODO: isi attribute nama dan email
-pass
+    def __init__(self, nama, email): # TODO: isi attribute nama dan email
+        pass
 
     def login(self):
         # TODO: cetak "<nama> berhasil login"
@@ -792,8 +792,8 @@ pass
         pass
 
 class Dosen(User):
-def **init**(self, nama, email, nip, matkul_diajar): # TODO: panggil constructor parent untuk nama dan email # TODO: isi attribute nip dan matkul_diajar
-pass
+    def __init__(self, nama, email, nip, matkul_diajar): # TODO: panggil constructor parent untuk nama dan email # TODO: isi attribute nip dan matkul_diajar
+        pass
 
     def login(self):
         # TODO: jalankan login() milik parent
@@ -810,8 +810,8 @@ pass
         pass
 
 class Mahasiswa(User):
-def **init**(self, nama, email, nim, matkul_diambil): # TODO: panggil constructor parent untuk nama dan email # TODO: isi attribute nim dan matkul_diambil
-pass
+    def __init__(self, nama, email, nim, matkul_diambil): # TODO: panggil constructor parent untuk nama dan email # TODO: isi attribute nim dan matkul_diambil
+        pass
 
     def login(self):
         # TODO: jalankan login() milik parent
@@ -870,36 +870,36 @@ mahasiswa.logout()
 Panjang `nip` dan `nim` dapat diperiksa dengan validasi sederhana pada constructor, sebagaimana dipelajari pada modul sebelumnya.
 
 {% capture m5_validasi_nip %}class User:
-def **init**(self, nama, email):
-self.nama = nama
-self.email = email
+    def __init__(self, nama, email):
+        self.nama = nama
+        self.email = email
 
 class Dosen(User):
-def **init**(self, nama, email, nip): # TODO: panggil constructor parent # TODO: raise ValueError("NIP harus 19 digit.") jika panjang nip bukan 19 # TODO: isi attribute nip
-pass
+    def __init__(self, nama, email, nip): # TODO: panggil constructor parent # TODO: raise ValueError("NIP harus 19 digit.") jika panjang nip bukan 19 # TODO: isi attribute nip
+        pass
 
 class Mahasiswa(User):
-def **init**(self, nama, email, nim): # TODO: panggil constructor parent # TODO: raise ValueError("NIM harus 11 digit.") jika panjang nim bukan 11 # TODO: isi attribute nim
-pass
+    def __init__(self, nama, email, nim): # TODO: panggil constructor parent # TODO: raise ValueError("NIM harus 11 digit.") jika panjang nim bukan 11 # TODO: isi attribute nim
+        pass
 
 # Program utama
 
 data = [
-("dosen", "Obie", "1990010120200110001"),
-("dosen", "Rina", "199001"),
-("mahasiswa", "Andi", "25051204001"),
-("mahasiswa", "Sari", "2505"),
+    ("dosen", "Obie", "1990010120200110001"),
+    ("dosen", "Rina", "199001"),
+    ("mahasiswa", "Andi", "25051204001"),
+    ("mahasiswa", "Sari", "2505"),
 ]
 
 for peran, nama, nomor in data:
-try:
-if peran == "dosen":
-orang = Dosen(nama, "email@unesa.ac.id", nomor)
-else:
-orang = Mahasiswa(nama, "email@unesa.ac.id", nomor)
-print("OK", nama)
-except ValueError as error:
-print("GAGAL", nama, error)
+    try:
+        if peran == "dosen":
+            orang = Dosen(nama, "email@unesa.ac.id", nomor)
+        else:
+            orang = Mahasiswa(nama, "email@unesa.ac.id", nomor)
+        print("OK", nama)
+    except ValueError as error:
+        print("GAGAL", nama, error)
 
 # Output yang diharapkan:
 
@@ -980,23 +980,23 @@ Object `mobil` memiliki empat attribute dan tiga method meskipun class `MobilLis
 Perhatikan bahwa `super()` pada `MobilListrik` memanggil constructor `Mobil`, kemudian `super()` pada `Mobil` memanggil constructor `Kendaraan`. Rantai tersebut berjalan otomatis selama setiap class memanggil `super()`.
 
 {% capture m5_multilevel_kendaraan %}class Kendaraan:
-def **init**(self, merk, tahun):
-self.merk = merk
-self.tahun = tahun
+    def __init__(self, merk, tahun):
+        self.merk = merk
+        self.tahun = tahun
 
     def nyalakan(self):
         print(f"{self.merk} menyala")
 
 class Mobil(Kendaraan):
-def **init**(self, merk, tahun, jumlah_pintu): # TODO: panggil constructor Kendaraan, lalu isi jumlah_pintu
-pass
+    def __init__(self, merk, tahun, jumlah_pintu): # TODO: panggil constructor Kendaraan, lalu isi jumlah_pintu
+        pass
 
     def buka_bagasi(self):
         print(f"Bagasi {self.merk} dibuka")
 
 class MobilListrik(Mobil):
-def **init**(self, merk, tahun, jumlah_pintu, kapasitas_baterai): # TODO: panggil constructor Mobil, lalu isi kapasitas_baterai
-pass
+    def __init__(self, merk, tahun, jumlah_pintu, kapasitas_baterai): # TODO: panggil constructor Mobil, lalu isi kapasitas_baterai
+        pass
 
     def isi_baterai(self):
         # TODO: cetak "<merk> sedang mengisi baterai"
@@ -1028,17 +1028,17 @@ mobil.isi_baterai()
 Method yang sama dapat dioverride pada lebih dari satu tingkat. Pemanggilan `super()` akan menjalankan method milik class tepat di atasnya pada rantai tersebut.
 
 {% capture m5_multilevel_sivitas %}class User:
-def **init**(self, nama, email):
-self.nama = nama
-self.email = email
+    def __init__(self, nama, email):
+        self.nama = nama
+        self.email = email
 
     def login(self):
         print(f"{self.nama} berhasil login")
 
 class Mahasiswa(User):
-def **init**(self, nama, email, nim):
-super().**init**(nama, email)
-self.nim = nim
+    def __init__(self, nama, email, nim):
+        super().__init__(nama, email)
+        self.nim = nim
 
     def login(self):
         super().login()
@@ -1048,8 +1048,8 @@ self.nim = nim
         print(f"{self.nim} membuka daftar nilai")
 
 class AsistenPraktikum(Mahasiswa):
-def **init**(self, nama, email, nim, matkul_asistensi): # TODO: panggil constructor Mahasiswa, lalu isi matkul_asistensi
-pass
+    def __init__(self, nama, email, nim, matkul_asistensi): # TODO: panggil constructor Mahasiswa, lalu isi matkul_asistensi
+        pass
 
     def login(self):
         # TODO: jalankan login() milik Mahasiswa melalui super()
@@ -1152,17 +1152,17 @@ Mobil berpindah dari mode darat ke mode air.
 Perhatikan bahwa `self` dituliskan secara eksplisit pada `Mobil.__init__(self, ...)`. Penulisan tersebut berbeda dengan `super().__init__(...)` yang mengisi `self` secara otomatis.
 
 {% capture m5_multiple_dasar %}class Mobil:
-def **init**(self, merk, tahun):
-self.merk = merk
-self.tahun = tahun
+    def __init__(self, merk, tahun):
+        self.merk = merk
+        self.tahun = tahun
 
     def berkendara(self):
         print(f"{self.merk} sedang berkendara di jalan")
 
 class Perahu:
-def **init**(self, kapasitas_penumpang, jenis_mesin):
-self.kapasitas_penumpang = kapasitas_penumpang
-self.jenis_mesin = jenis_mesin
+    def __init__(self, kapasitas_penumpang, jenis_mesin):
+        self.kapasitas_penumpang = kapasitas_penumpang
+        self.jenis_mesin = jenis_mesin
 
     def berlayar(self):
         print("Perahu sedang berlayar di air")
@@ -1208,23 +1208,23 @@ mobil_amfibi.berpindah_mode()
 ### 3. Multiple inheritance untuk peran ganda
 
 {% capture m5_multiple_asisten %}class Mahasiswa:
-def **init**(self, nama, nim):
-self.nama = nama
-self.nim = nim
+    def __init__(self, nama, nim):
+        self.nama = nama
+        self.nim = nim
 
     def mengambil_matkul(self, matkul):
         print(f"{self.nama} mengambil {matkul}")
 
 class Pengajar:
-def **init**(self, matkul_diajar):
-self.matkul_diajar = matkul_diajar
+    def __init__(self, matkul_diajar):
+        self.matkul_diajar = matkul_diajar
 
     def mengajar(self):
         print(f"Mengajar {self.matkul_diajar}")
 
 class AsistenDosen(Mahasiswa, Pengajar):
-def **init**(self, nama, nim, matkul_diajar): # TODO: panggil constructor Mahasiswa untuk nama dan nim # TODO: panggil constructor Pengajar untuk matkul_diajar
-pass
+    def __init__(self, nama, nim, matkul_diajar): # TODO: panggil constructor Mahasiswa untuk nama dan nim # TODO: panggil constructor Pengajar untuk matkul_diajar
+        pass
 
     def input_nilai(self, nilai):
         # TODO: cetak "<nama> menginput nilai <nilai> untuk <matkul_diajar>"
@@ -1313,15 +1313,15 @@ print(C.__mro__)
 Penulisan `C.mro` tanpa tanda kurung tidak menampilkan urutan MRO, melainkan menampilkan object method-nya.
 
 {% capture m5_mro %}class A:
-def hello(self):
-print("Hello from A")
+    def hello(self):
+        print("Hello from A")
 
 class B:
-def hello(self):
-print("Hello from B")
+    def hello(self):
+        print("Hello from B")
 
 class C(A, B):
-pass
+    pass
 
 # TODO: buat class D yang mewarisi B dan A dengan urutan terbalik dari class C
 
@@ -1384,20 +1384,20 @@ Meskipun `Warrior` merupakan turunan langsung dari `Karakter`, pemanggilan `supe
 Dengan demikian, `super()` tidak selalu berarti parent langsung. `super()` berarti class berikutnya pada urutan MRO.
 
 {% capture m5_diamond %}class Karakter:
-def status(self):
-print("Karakter")
+    def status(self):
+        print("Karakter")
 
 class Warrior(Karakter):
-def status(self): # TODO: cetak "Warrior", lalu lanjutkan ke class berikutnya melalui super()
-pass
+    def status(self): # TODO: cetak "Warrior", lalu lanjutkan ke class berikutnya melalui super()
+        pass
 
 class MagicUser(Karakter):
-def status(self): # TODO: cetak "MagicUser", lalu lanjutkan ke class berikutnya melalui super()
-pass
+    def status(self): # TODO: cetak "MagicUser", lalu lanjutkan ke class berikutnya melalui super()
+        pass
 
 class Paladin(Warrior, MagicUser):
-def status(self): # TODO: cetak "Paladin", lalu lanjutkan ke class berikutnya melalui super()
-pass
+    def status(self): # TODO: cetak "Paladin", lalu lanjutkan ke class berikutnya melalui super()
+        pass
 
 # Program utama
 
@@ -1467,8 +1467,8 @@ Susunan tersebut menggunakan seluruh materi modul ini sekaligus. `Warrior` dan `
 ### 1. Karakter dasar dan dua turunannya
 
 {% capture m5_game_dasar %}class Karakter:
-def **init**(self, nama, hp): # TODO: isi attribute nama dan hp
-pass
+    def __init__(self, nama, hp): # TODO: isi attribute nama dan hp
+        pass
 
     def bergerak(self):
         # TODO: cetak "<nama> bergerak"
@@ -1479,8 +1479,8 @@ pass
         pass
 
 class Warrior(Karakter):
-def **init**(self, nama, hp, kekuatan): # TODO: panggil constructor Karakter, lalu isi kekuatan
-pass
+    def __init__(self, nama, hp, kekuatan): # TODO: panggil constructor Karakter, lalu isi kekuatan
+        pass
 
     def menyerang(self):
         # TODO: cetak "<nama> menyerang dengan kekuatan <kekuatan>"
@@ -1492,8 +1492,8 @@ pass
         pass
 
 class MagicUser(Karakter):
-def **init**(self, nama, hp, mana): # TODO: panggil constructor Karakter, lalu isi mana
-pass
+    def __init__(self, nama, hp, mana): # TODO: panggil constructor Karakter, lalu isi mana
+        pass
 
     def menggunakan_sihir(self):
         # TODO: cetak "<nama> menggunakan sihir, sisa mana <mana>"
@@ -1559,9 +1559,9 @@ Cara paling sederhana untuk mengatasinya adalah memanggil constructor `Karakter`
 Perhatikan pula bahwa karena `Warrior` dan `MagicUser` sama-sama merupakan turunan `Karakter`, constructor `Karakter` akan terpanggil dua kali. Pada program ini hal tersebut tidak menimbulkan masalah karena nilai `nama` dan `hp` yang diisi ulang sama.
 
 {% capture m5_game_paladin %}class Karakter:
-def **init**(self, nama, hp):
-self.nama = nama
-self.hp = hp
+    def __init__(self, nama, hp):
+        self.nama = nama
+        self.hp = hp
 
     def bergerak(self):
         print(f"{self.nama} bergerak")
@@ -1570,24 +1570,24 @@ self.hp = hp
         print(f"{self.nama} | HP: {self.hp}")
 
 class Warrior(Karakter):
-def **init**(self, nama, hp, kekuatan): # constructor Karakter dipanggil langsung, bukan melalui super(), # karena class ini akan digabungkan melalui multiple inheritance
-Karakter.**init**(self, nama, hp)
-self.kekuatan = kekuatan
+    def __init__(self, nama, hp, kekuatan): # constructor Karakter dipanggil langsung, bukan melalui super(), # karena class ini akan digabungkan melalui multiple inheritance
+        Karakter.__init__(self, nama, hp)
+        self.kekuatan = kekuatan
 
     def menyerang(self):
         print(f"{self.nama} menyerang dengan kekuatan {self.kekuatan}")
 
 class MagicUser(Karakter):
-def **init**(self, nama, hp, mana):
-Karakter.**init**(self, nama, hp)
-self.mana = mana
+    def __init__(self, nama, hp, mana):
+        Karakter.__init__(self, nama, hp)
+        self.mana = mana
 
     def menggunakan_sihir(self):
         print(f"{self.nama} menggunakan sihir, sisa mana {self.mana}")
 
 class Paladin(Warrior, MagicUser):
-def **init**(self, nama, hp, kekuatan, mana): # TODO: panggil constructor Warrior untuk nama, hp, dan kekuatan # TODO: panggil constructor MagicUser untuk nama, hp, dan mana
-pass
+    def __init__(self, nama, hp, kekuatan, mana): # TODO: panggil constructor Warrior untuk nama, hp, dan kekuatan # TODO: panggil constructor MagicUser untuk nama, hp, dan mana
+        pass
 
     def menyembuhkan(self, target):
         # TODO: cetak "<nama> menyembuhkan <target>"
@@ -1599,8 +1599,8 @@ pass
         pass
 
 class HolyPaladin(Paladin):
-def **init**(self, nama, hp, kekuatan, mana, sihir_khusus): # TODO: panggil constructor Paladin, lalu isi sihir_khusus
-pass
+    def __init__(self, nama, hp, kekuatan, mana, sihir_khusus): # TODO: panggil constructor Paladin, lalu isi sihir_khusus
+        pass
 
     def sihir_suci(self):
         # TODO: cetak "<nama> merapalkan <sihir_khusus>"
@@ -1656,8 +1656,8 @@ holy.tampilkan_status()
 Studi kasus terakhir mengembalikan pembahasan pada sistem informasi akademik yang dibahas pada bagian pendahuluan.
 
 {% capture m5_studi_kasus_sivitas %}class User:
-def **init**(self, nama, email, username, password): # TODO: isi keempat attribute
-pass
+    def __init__(self, nama, email, username, password): # TODO: isi keempat attribute
+        pass
 
     def login(self):
         # TODO: cetak "<username> berhasil login"
@@ -1672,8 +1672,8 @@ pass
         pass
 
 class Dosen(User):
-def **init**(self, nama, email, username, password, nip, matkul_diajar): # TODO: panggil constructor parent, lalu isi nip dan matkul_diajar
-pass
+    def __init__(self, nama, email, username, password, nip, matkul_diajar): # TODO: panggil constructor parent, lalu isi nip dan matkul_diajar
+        pass
 
     def login(self):
         # TODO: jalankan login() milik parent
@@ -1685,8 +1685,8 @@ pass
         pass
 
 class Mahasiswa(User):
-def **init**(self, nama, email, username, password, nim, matkul_diambil): # TODO: panggil constructor parent, lalu isi nim dan matkul_diambil
-pass
+    def __init__(self, nama, email, username, password, nim, matkul_diambil): # TODO: panggil constructor parent, lalu isi nim dan matkul_diambil
+        pass
 
     def login(self):
         # TODO: jalankan login() milik parent
@@ -1698,8 +1698,8 @@ pass
         pass
 
 class Tendik(User):
-def **init**(self, nama, email, username, password, nip): # TODO: panggil constructor parent, lalu isi nip
-pass
+    def __init__(self, nama, email, username, password, nip): # TODO: panggil constructor parent, lalu isi nip
+        pass
 
     def input_data_mahasiswa(self):
         # TODO: cetak "<nama> menginput data mahasiswa"
@@ -1708,19 +1708,19 @@ pass
 # Program utama
 
 daftar_pengguna = [
-Dosen("Obie", "obie@unesa.ac.id", "obie01", "rahasia",
-"1990010120200110001", "PBO"),
-Mahasiswa("Andi", "andi@mhs.unesa.ac.id", "andi01", "rahasia",
-"25051204001", "PBO"),
-Tendik("Rina", "rina@unesa.ac.id", "rina01", "rahasia",
-"1988010120150120002"),
+    Dosen("Obie", "obie@unesa.ac.id", "obie01", "rahasia",
+    "1990010120200110001", "PBO"),
+    Mahasiswa("Andi", "andi@mhs.unesa.ac.id", "andi01", "rahasia",
+    "25051204001", "PBO"),
+    Tendik("Rina", "rina@unesa.ac.id", "rina01", "rahasia",
+    "1988010120150120002"),
 ]
 
 for pengguna in daftar_pengguna:
-pengguna.login()
-pengguna.tampilkan_identitas()
-pengguna.logout()
-print("---")
+    pengguna.login()
+    pengguna.tampilkan_identitas()
+    pengguna.logout()
+    print("---")
 
 # Output yang diharapkan:
 

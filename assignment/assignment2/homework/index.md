@@ -5,7 +5,7 @@ parent: "Assignment 2"
 printtitle: "Homework 2 - Class Method dan Decorator"
 nav_order: 2
 tampil: true
-isdebug: true
+isdebug: false
 assignment_id: "homework2"
 variant_version: 1
 selection_mode: "nim"

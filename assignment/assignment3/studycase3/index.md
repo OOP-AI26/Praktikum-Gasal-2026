@@ -5,7 +5,7 @@ parent: "Assignment 3"
 printtitle: "Live Practicum 3 - Inheritance"
 nav_order: 1
 tampil: true
-isdebug: true
+isdebug: false
 assignment_id: "assignment3-kelas"
 variant_version: 1
 selection_mode: "kelas"

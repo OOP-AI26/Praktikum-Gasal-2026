@@ -44,6 +44,10 @@ exclude:
   - assignment/assignment3/studycase3/description.md
   - assignment/assignment3/homework/variants
   - assignment/assignment3/homework/description.md
+  - assignment/assignment4/studycase4/variants
+  - assignment/assignment4/studycase4/description.md
+  - assignment/assignment4/homework/variants
+  - assignment/assignment4/homework/description.md
 
 callouts:
   warning:

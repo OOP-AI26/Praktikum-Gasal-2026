@@ -28,8 +28,8 @@ Setelah selesai, unduh bundle melalui **Save File**, lalu jalankan `python jawab
 
 | Kelas | Live Practicum 6 | Homework 6 |
 | :-- | :-- | :-- |
-| 2025C | 28 Oktober 2026, 09.30 WIB | 28 Oktober 2026, 11.10 WIB |
-| 2025A | 28 Oktober 2026, 13.00 WIB | 28 Oktober 2026, 14.40 WIB |
-| 2025B | 30 Oktober 2026, 13.00 WIB | 30 Oktober 2026, 14.40 WIB |
+| 2025C | 4 November 2026, 09.30 WIB | 4 November 2026, 11.10 WIB |
+| 2025A | 4 November 2026, 13.00 WIB | 4 November 2026, 14.40 WIB |
+| 2025B | 6 November 2026, 13.00 WIB | 6 November 2026, 14.40 WIB |
 
-Live dibuka saat kelas dimulai dan homework setelah kelas selesai, mengikuti Week 9 bersama Assignment 5. Jadwal pengumpulan dan ketentuan presensi mengikuti arahan pengajar; lulus test tidak otomatis mencatat kehadiran atau mengirim tugas.
+Live dibuka saat kelas dimulai dan homework setelah kelas selesai, mengikuti Week 10. Jadwal pengumpulan dan ketentuan presensi mengikuti arahan pengajar; lulus test tidak otomatis mencatat kehadiran atau mengirim tugas.

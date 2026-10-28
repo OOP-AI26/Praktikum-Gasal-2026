@@ -21,9 +21,9 @@ class_options:
     title: "2025C - Honor Kegiatan Modular"
     variant_id: "v3"
 unlock_at:
-  "2025A": "2026-10-28T13:00:00+07:00"
-  "2025B": "2026-10-30T13:00:00+07:00"
-  "2025C": "2026-10-28T09:30:00+07:00"
+  "2025A": "2026-11-04T13:00:00+07:00"
+  "2025B": "2026-11-06T13:00:00+07:00"
+  "2025C": "2026-11-04T09:30:00+07:00"
 variant_dir: "assignment/assignment6/studycase6/variants"
 description_file: "assignment/assignment6/studycase6/description.md"
 ---

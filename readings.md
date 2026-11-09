@@ -19,3 +19,4 @@ Materi praktikum disusun berurutan. Pelajari contoh, lengkapi bagian TODO pada e
 | [Chapter 6]({{ '/readings-chapter6/' | relative_url }}) | Abstract methods, data classes, mutability, and typing styles |
 | [Chapter 7]({{ '/readings-chapter7/' | relative_url }}) | Polymorphism and class relationships |
 | [Chapter 8]({{ '/readings-chapter8/' | relative_url }}) | Modular programming, packages, and maintainable project structure |
+| [Chapter 9]({{ '/readings-chapter9/' | relative_url }}) | Exceptions and robust error handling |

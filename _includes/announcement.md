@@ -3,6 +3,6 @@
     <span class="label label-yellow">Reminder</span>
   </div>
   <div class="announcement-grid__text">
-    Homework 4 untuk kelas 2025A, deadlinenya 13 Okt 23.59 WIB, submissionnya ada <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwlWX2JVZ8DrqOvfTWQ9XLXb1qcti3IxiR05N_DA9dC3hMKA/viewform">disini</a>.<br>
+    Homework 5 dan 6 untuk kelas 2025A, deadlinenya 11 Nov 23.59 WIB, submissionnya ada <a href="https://forms.gle/fD2LSAdkXCSm2v2F6">disini</a>.<br>Lapraknya 5 dan 6 digabung ya, formatnya tetep. untuk field kode kosongin saja diganti dengan nama file zip nya.
   </div>
 </div>

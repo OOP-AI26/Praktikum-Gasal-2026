@@ -60,6 +60,10 @@ exclude:
   - assignment/assignment7/studycase7/description.md
   - assignment/assignment7/homework/variants
   - assignment/assignment7/homework/description.md
+  - assignment/assignment8/studycase8/variants
+  - assignment/assignment8/studycase8/description.md
+  - assignment/assignment8/homework/variants
+  - assignment/assignment8/homework/description.md
 
 callouts:
   warning:
